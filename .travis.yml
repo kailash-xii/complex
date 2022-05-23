@@ -21,3 +21,15 @@ after_success:
   - docker push kailashxii/multi_server
   - docker push kailashxii/multi_nginx
   - docker push kailashxii/multi_worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-south-1"
+  app: "complex"
+  env: "Complex-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-268711227061"
+  bucket_path: "complex"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
