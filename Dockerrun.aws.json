@@ -5,23 +5,27 @@
       "name": "client",
       "image": "kailashxii/multi-client",
       "hostname": "client",
+      "memory": 128,
       "essential": false
     },
     {
       "name": "server",
       "image": "kailashxii/multi-server",
       "hostname": "api",
+      "memory": 128,
       "essential": false
     },
     {
       "name": "worker",
       "image": "kailashxii/multi-worker",
       "hostname": "worker",
+      "memory": 128,
       "essential": false
     },
     {
       "name": "nginx",
       "image": "kailashxii/multi-nginx",
+      "memory": 128,
       "essential": true,
       "portMappings": [
         {
