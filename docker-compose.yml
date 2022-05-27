@@ -1,11 +1,11 @@
 version: "3"
 services:
   client:
-    image: "kailashxii/multi-client"
+    image: "kailashxii/multi_client"
     mem_limit: 128m
     hostname: client
   server:
-    image: "kailashxii/multi-server"
+    image: "kailashxii/multi_server"
     mem_limit: 128m
     hostname: api
     environment:
@@ -17,14 +17,14 @@ services:
       - PGPASSWORD=$PGPASSWORD
       - PGPORT=$PGPORT
   worker:
-    image: "kailashxii/multi-worker"
+    image: "kailashxii/multi_worker"
     mem_limit: 128m
     hostname: worker
     environment:
       - REDIS_HOST=$REDIS_HOST
       - REDIS_PORT=$REDIS_PORT
   nginx:
-    image: "kailashxii/multi-nginx"
+    image: "kailashxii/multi_nginx"
     mem_limit: 128m
     hostname: nginx
     ports:
